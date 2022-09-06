@@ -1,0 +1,41 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card>
+        <mat-card-title>Aardvark Roulette game</mat-card-title>
+        <mat-card-subtitle>API base URL</mat-card-subtitle>
+        <mat-card-content fxLayout="column">
+            <div fxLayout="column">
+                <form class="example-form">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>url</mat-label>
+                        <input matInput name="url" [(ngModel)]="url" (ngModelChange)="setUrl($event)">
+                    </mat-form-field>
+                </form>
+                <mat-card-subtitle>Stats (last 200)</mat-card-subtitle>
+                <div fxLayout="row">
+                    <app-stats *ngIf="stats" [results]="stats">
+                    </app-stats>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-between start">
+                    <div fxLayout="column" fxFlex="0 1 600px">
+                        <mat-divider></mat-divider>
+                        <mat-card-subtitle>Gameboard</mat-card-subtitle>
+                        <div fxLayout="row wrap" *ngIf="squares">
+                            <app-square *ngFor="let square of squares" [square]="square"
+                                [blink]="getBlinking(square.value)">
+                            </app-square>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <mat-card-subtitle>Events</mat-card-subtitle>
+                        <app-eventlog [events]="events"></app-eventlog>
+                    </div>
+                    <mat-spinner *ngIf="this.isSpinning"></mat-spinner>
+                    <div fxLayout="column" fxFlex="0 1 600px">
+                        <mat-divider></mat-divider>
+                        <mat-card-subtitle>Log</mat-card-subtitle>
+                        <app-msglog></app-msglog>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

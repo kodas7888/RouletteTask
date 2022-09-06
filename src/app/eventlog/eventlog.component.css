@@ -1,0 +1,8 @@
+.mat-table {
+    width: 100%;
+}
+
+.table-containerr {
+    max-height: 300px;
+    overflow: auto;
+}

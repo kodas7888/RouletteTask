@@ -1,0 +1,13 @@
+.logger {
+    background-color: rgb(237, 243, 247);
+    padding: 8px;
+}
+
+.mat-list-item {
+    height: 32px !important;
+}
+
+.mat-list {
+    max-height: 500px;
+    overflow: auto;
+}

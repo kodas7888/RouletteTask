@@ -1,0 +1,12 @@
+<button mat-mini-fab *ngIf="square?.color=='black'" class="btn black" [ngClass]="{'blink': blink}">
+    {{ square?.value}}
+</button>
+<button mat-mini-fab *ngIf="square?.color=='red'" class="btn red" [ngClass]="{'blink': blink}">
+    {{ square?.value}}
+</button>
+<button mat-mini-fab *ngIf="square?.color=='green'" class="btn green blink" [ngClass]="{'blink': blink}">
+    {{square?.value}}
+</button>
+<button mat-mini-fab *ngIf="!square" class="btn green blink" [ngClass]="{'blink': blink}">
+    00
+</button>

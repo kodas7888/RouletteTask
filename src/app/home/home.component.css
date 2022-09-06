@@ -1,0 +1,16 @@
+mat-card {
+    background-color: white;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.mat-spinner {
+    margin-top: 100px;
+}
